@@ -29,5 +29,21 @@ public class Demo {
                 .worksAt("Developer")
                 .build();
         System.out.println(person);
+
+        //Builder Facade
+
+        PersonImprovedBuilder personImprovedBuilder = new PersonImprovedBuilder();
+
+        PersonImproved personImproved = personImprovedBuilder
+                .lives()
+                    .in("London")
+                    .at("foo Stret 1")
+                    .withPostcode("12345")
+                .works()
+                    .at("Fabrikam")
+                    .asA("Engineer")
+                    .earns(123000)
+                .build();
+        System.out.println(personImproved);
     }
 }
